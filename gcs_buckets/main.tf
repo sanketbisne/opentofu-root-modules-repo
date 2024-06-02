@@ -1,7 +1,7 @@
 resource "google_storage_bucket" "example" {
   for_each = var.buckets
 
-  name         = each.key
+  name         = each.value.name
   location     = each.value.location
   storage_class = each.value.storage_class
 
